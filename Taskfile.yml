@@ -13,6 +13,11 @@ tasks:
   default:
     cmds:
       - task: test
+
+  verify:
+    cmds:
+      - "{{.MVNW}} -ntp verify"
+
   test:
     deps: [format]
     cmds:
