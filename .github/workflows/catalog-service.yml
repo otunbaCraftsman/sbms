@@ -27,8 +27,8 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-#          distribution: 'temurin'
-          distribution: 'liberica'
+          distribution: 'temurin'
+#          distribution: 'liberica'
           cache: 'maven'
 
 #      - name: Make Maven wrapper executable
