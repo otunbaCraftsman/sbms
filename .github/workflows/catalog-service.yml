@@ -28,7 +28,6 @@ jobs:
         with:
           java-version: '21'
           distribution: 'temurin'
-#          distribution: 'temurin'
 #          distribution: 'liberica'
           cache: 'maven'
 
