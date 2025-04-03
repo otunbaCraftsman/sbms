@@ -31,7 +31,7 @@ class ProductRepositoryTest {
         assertThat(products).hasSize(15);
     }
 
-    /*@Test
+    @Test
     void shouldGetProductByCode() {
         Product product = productRepository.findByCode("P100").orElseThrow();
         assertThat(product.getCode()).isEqualTo("P100");
@@ -43,5 +43,6 @@ class ProductRepositoryTest {
     @Test
     void shouldReturnEmptyWhenProductCodeNotExists() {
         assertThat(productRepository.findByCode("invalid_product_code")).isEmpty();
-    }*/
+    }
+
 }

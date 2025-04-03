@@ -1,11 +1,15 @@
 package com.craftsmen.bookstore.catalog.web.controller;
 
 import com.craftsmen.bookstore.catalog.BaseIntegrationTest;
+import com.craftsmen.bookstore.catalog.web.dto.ProductDTO;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 import org.springframework.test.context.jdbc.Sql;
 
+import java.math.BigDecimal;
+
 import static io.restassured.RestAssured.given;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 
@@ -29,9 +33,9 @@ class ProductControllerTest extends BaseIntegrationTest {
                     .body("hasPrevious", is(false));
         }
 
-/*        @Test
+        @Test
         void shouldGetProductByCode() {
-            Product product = given().contentType(ContentType.JSON)
+            ProductDTO product = given().contentType(ContentType.JSON)
                     .when()
                     .get("/api/products/{code}", "P100")
                     .then()
@@ -39,7 +43,7 @@ class ProductControllerTest extends BaseIntegrationTest {
                     .assertThat()
                     .extract()
                     .body()
-                    .as(Product.class);
+                    .as(ProductDTO.class);
 
             assertThat(product.code()).isEqualTo("P100");
             assertThat(product.name()).isEqualTo("The Hunger Games");
@@ -58,7 +62,6 @@ class ProductControllerTest extends BaseIntegrationTest {
                     .body("status", is(404))
                     .body("title", is("Product Not Found"))
                     .body("detail", is("Product with code " + code + " not found"));
-        }*/
-
+        }
 
 }
