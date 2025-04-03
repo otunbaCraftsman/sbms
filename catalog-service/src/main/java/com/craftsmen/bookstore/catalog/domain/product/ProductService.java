@@ -10,6 +10,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @Transactional
 public class ProductService {
@@ -37,6 +39,10 @@ public class ProductService {
                 productsPage.isLast(),
                 productsPage.hasNext(),
                 productsPage.hasPrevious());
+    }
+
+    public Optional<ProductDTO> getProductByCode(String code) {
+        return repository.findByCode(code).map(ProductMapper::toProductDTO);
     }
 
 }
