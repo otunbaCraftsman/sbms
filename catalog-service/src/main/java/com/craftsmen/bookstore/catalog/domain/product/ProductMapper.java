@@ -12,5 +12,4 @@ class ProductMapper {
                 product.getImageUrl(),
                 product.getPrice());
     }
-
 }

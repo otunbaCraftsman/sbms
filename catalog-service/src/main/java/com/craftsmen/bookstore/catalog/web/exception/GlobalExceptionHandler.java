@@ -1,9 +1,8 @@
 package com.craftsmen.bookstore.catalog.web.exception;
 
+import com.craftsmen.bookstore.catalog.domain.product.ProductNotFoundException;
 import java.net.URI;
 import java.time.Instant;
-
-import com.craftsmen.bookstore.catalog.domain.product.ProductNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;

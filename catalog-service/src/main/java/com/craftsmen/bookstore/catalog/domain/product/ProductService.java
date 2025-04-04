@@ -3,14 +3,13 @@ package com.craftsmen.bookstore.catalog.domain.product;
 import com.craftsmen.bookstore.catalog.ApplicationProperties;
 import com.craftsmen.bookstore.catalog.web.dto.ProductDTO;
 import com.craftsmen.bookstore.catalog.web.utility.PagedResult;
+import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -44,5 +43,4 @@ public class ProductService {
     public Optional<ProductDTO> getProductByCode(String code) {
         return repository.findByCode(code).map(ProductMapper::toProductDTO);
     }
-
 }

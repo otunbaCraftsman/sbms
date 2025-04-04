@@ -1,9 +1,9 @@
 package com.craftsmen.bookstore.catalog.web.controller;
 
 import com.craftsmen.bookstore.catalog.domain.product.ProductNotFoundException;
-import com.craftsmen.bookstore.catalog.web.utility.PagedResult;
 import com.craftsmen.bookstore.catalog.domain.product.ProductService;
 import com.craftsmen.bookstore.catalog.web.dto.ProductDTO;
+import com.craftsmen.bookstore.catalog.web.utility.PagedResult;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,5 +29,4 @@ class ProductController {
                 .map(ResponseEntity::ok)
                 .orElseThrow(() -> ProductNotFoundException.forCode(code));
     }
-
 }

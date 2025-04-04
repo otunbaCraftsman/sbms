@@ -17,6 +17,4 @@ public abstract class BaseIntegrationTest {
     void setup() {
         RestAssured.port = randomPort;
     }
-
-
 }

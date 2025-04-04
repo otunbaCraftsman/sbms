@@ -22,16 +22,19 @@ class Product {
     private Long id;
 
     @Column(nullable = false, unique = true)
-    @NotBlank(message = "Product code is required") private String code;
+    @NotBlank(message = "Product code is required")
+    private String code;
 
-    @NotBlank(message = "Product name is required") @Column(nullable = false)
+    @NotBlank(message = "Product name is required")
+    @Column(nullable = false)
     private String name;
 
     private String description;
 
     private String imageUrl;
 
-    @NotNull(message = "Product price is required") @DecimalMin("0.1") @Column(nullable = false)
+    @NotNull(message = "Product price is required") @DecimalMin("0.1")
+    @Column(nullable = false)
     private BigDecimal price;
 
     public Product() {}
@@ -92,5 +95,4 @@ class Product {
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
-
 }
